@@ -1,3 +1,5 @@
+use std::fmt::format;
+
 use anyhow::{bail, Result};
 use clap::{Args, Subcommand};
 
@@ -27,8 +29,8 @@ impl Battery {
                 let battery_path = config.interfaces.battery.device.clone();
                 StdOut::info(&format!("Battery path : {}", battery_path), Some(BATTERY));
                 let battery = Power {
-                    path: "/path/of/battery".to_string(),
-                    currnet_now: "/path/of/battery/current".to_string(),
+                    path: format!("{}/uevent", battery_path),
+                    currnet_now: format!("{}/current_now", battery_path),
                 };
 
                 let _ = match battery.info() {
