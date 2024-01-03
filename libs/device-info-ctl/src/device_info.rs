@@ -1,13 +1,12 @@
 use anyhow::{bail, Result};
 use sysinfo::{CpuExt, DiskExt, System, SystemExt};
-use tracing::{error as trace_error, info, trace, warn,instrument};
+use tracing::{error as trace_error, info, instrument, trace, warn};
 
 use serde::{Deserialize, Serialize};
 
 use crate::{DeviceInfoCtlError, DeviceInfoCtlErrorCodes};
 
-#[derive(Debug, Default)]
-#[derive(Serialize, Deserialize)]
+#[derive(Debug, Default, Serialize, Deserialize)]
 pub struct MemoryInfo {
     pub total_memory: u64,
     pub available_memory: u64,
