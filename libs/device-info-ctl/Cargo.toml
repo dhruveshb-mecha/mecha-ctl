@@ -1,7 +1,11 @@
 [package]
 name = "mecha_device_info_ctl"
 version = "0.1.0"
+documentation = "https://docs.mecha.so"
 edition = "2021"
+license = "MIT"
+repository = "https://github.com/mecha-org/mecha-ctl"
+homepage = "https://mecha.so"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
